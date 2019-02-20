@@ -1,0 +1,7 @@
+Napotki pri programiranju v MATLABU oz. zapiski s prvih vaj:
+- uporaba vgrajenih ukazov (karkoli napišeš sam dela veliko poèasneje kot vgrajene funkcije),
+- spomin alociraj vnaprej (sprotno razširjanje matrik je zelo poèasno),
+- poskusi programirati brez zank in rekurzije, èe je nalogo možno rešiti
+	s kombinacijo vektorskih/matriènih funkcij in operacij (npr. pika pred operacijo),
+	(npr. f-norma = sqrt(sum(sum(X.^2))), ne pa dve zanki for),
+- funkcije (èe je le možno) napiši tako, da delujejo tudi za vektorje/matrike.
