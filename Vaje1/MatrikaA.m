@@ -1,3 +1,3 @@
 function A = MatrikaA(x, y)
-    %domaèa naloga
+    A = x * (y.^(-1))';
 end
