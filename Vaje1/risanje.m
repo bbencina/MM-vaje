@@ -10,7 +10,9 @@ h1 = g1; h2 = g2; h3 = @(t) t;
 %ts = 0:2*pi/100:10*pi;
 %plot3(h1(ts), h2(ts), h3(ts));
 
-k = @(x, y) (x.^2 + y.^2)./(1 .+ x .+ y);
-[xs,ys] = meshgrid(0:0.05:1,0:0.05:1);
-surf(xs, ys, k(xs, ys));
+k = @(x, y) (x.^2 + y.^2)./(1 + x + y);
+xs = 0:0.05:1;
+ys = 0:0.05:1;
+[Xs,Ys] = meshgrid(xs, ys);
+surf(xs, ys, k(Xs, Ys));
 view(3);
