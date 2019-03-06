@@ -1,0 +1,34 @@
+Dif. enaèba 2. reda za gibanje matematiènega nihala:
+F = m * a
+F_t = m * x'' ; kjer je x = l * \theta
+-m * g * sin(\theta) = m * l * \theta''
+Torej:
+\theta'' + sin(\theta) * g / l = 0
+je nelinearna D.E. 2. reda.
+
+
+Za reševanje z MATLABom s funkcijo ode45 moramo to pretvoriti v sistem D.E. 1. reda:
+y1 = \theta,
+y2 = \theta';
+y1' = y2.
+
+[y1 ; y2]' = [y2 ; -g / l * sin(y1)]
+je iskani sistem.
+
+Za nihajni èas izraèunamo koliko èasa potrebujemo do ravnovesne lege in pomnožimo s 4.
+Problem je, da nimamo funkcije, temveè le D.E. zanjo. Ta D.E. nam zastonj da še odvod
+v vsaki toèki, kar nam da idejo, da za iskanje nièle uporabimo tangentno metodo.
+
+Drugi naèin:
+Oznaèimo \omega^2 = g/l.
+Pomnožimo enaèbo s \theta': \theta' * \theta'' + \omega^2 * sin(\theta) * \theta' = 0.
+Integraramo: 1/2 * \theta'^2 - \omega^2 * cos(\theta) = k.
+Vstavimo t = 0 => \theta'(0) = 0, \theta(0) = \theta_0.
+1/2 * \theta'^2 - \omega^2 * cos(\theta) = -\omega^2 * cos(\theta_0).
+
+=> Nihajni èas T = 4*\sqrt(l)/\sqrt(2*g) * integral(0, \theta_0){d\theta/(\sqrt(cos(\theta)-cos(\theta_0)))}.
+
+
+V drugi toèki nas zanima obratno: pri katerem kotu dobimo nihajni èas 9 s.
+Napišemo funkcijo F, ki v odvisnosti od \theta vrne nihajni èas.
+Nato išèemo nièlo funkcije F - 9.
