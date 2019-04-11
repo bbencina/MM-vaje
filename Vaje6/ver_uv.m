@@ -13,13 +13,13 @@ function X = ver_uv(W0, zac, L, M)
     sistem = @(W) sistem_uv(W, zac, L, vsote_mi);
     
     % fsolve:
-    W = fsolve(sistem, W0);
+%    W = fsolve(sistem, W0);
     
     % newton: PROBLEMI S SINGULARNO MATRIKO
     % funkcija, ki v odvisnosti od W izraèuna jacobi sistema
-%     JF = @(W) jacobian_uv(W, L, vsote_mi);
-%     
-%     W = newton(sistem, JF, W0, 1e-14);
+     JF = @(W) jacobian_uv(W, L, vsote_mi);
+     
+     W = newton(sistem, JF, W0, 1e-14);
     
     u = W(1); v = W(2);
     

@@ -1,6 +1,6 @@
 function [] = risi_ver(zac, L, M)
     
-    W0 = [-1; 1]; % zaè približek
+    W0 = [-1; -1]; % zaè približek
     
     X = ver_uv(W0, zac, L, M);
     

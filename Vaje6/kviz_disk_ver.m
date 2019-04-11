@@ -5,7 +5,7 @@ M = [2 + b/100, 3.4, 0.8, 1 + b/100, 0.6, 3.1];
 L = [1, 1, 1, 1, 1, 1];
 g = 9.8;
 
-W0 = [-1; 1];
+W0 = [-1; -1];
 
 % 1) Vsota koordinat težišèa
 X = ver_uv(W0, zac, L, M);
@@ -32,7 +32,7 @@ for i = 1:size(p,1)
     y = sum(M(p(i,:)).*tez_y) / sum(sum(M));
     if y < mini
         mini = y;
-        p0 = p(i,:)
+        p0 = p(i,:);
         Y0 = Y;
     end
 end
