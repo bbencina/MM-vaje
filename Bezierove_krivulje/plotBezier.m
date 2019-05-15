@@ -14,4 +14,5 @@ function plotBezier(b, clr)
     hold on
     plot(b(1, :), b(2, :), '-o');
     plot(fs(1, :), fs(2, :));
+    hold off
 end
