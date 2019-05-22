@@ -6,12 +6,19 @@ function seka = seka_pravokotnik(l,P)
     % normala na premico
     n = [0, -1; 1, 0]*l(:,2);
     n = n/norm(n);
-    %vektorji od toèke do oglišè pravokotnika
-    vekt = P - [l(:,1) l(:,1) l(:,1) l(:,1)];
-    skal = n'*vekt;
-    pred = sign(skal);
-    % ali vsi ležijo na isti polravnini
-    if abs(sum(pred)) == 4
+    
+    tocka = l(:,1);
+    stran_polravnine = zeros(1,4);
+    for i = 1:4
+        stran_polravnine(i) = sign(dot(n,P(:,i)-tocka));
+        
+        if stran_polravnine(i) == 0
+            seka = 1;
+            return
+        end
+    end
+    
+    if abs(sum(stran_polravnine)) == 4
         seka = 0;
     else
         seka = 1;
